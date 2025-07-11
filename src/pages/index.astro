@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Timeline from '../components/Timeline.astro';
+import TimelineItem from '../components/TimelineItem.astro';
+import Section from '../components/Section.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import Card from '../components/Card.astro';
+
+// Import data
+import { getCollection } from 'astro:content';
+
+const historyEntries = await getCollection('history');
+const sortedHistory = historyEntries.sort((a, b) => {
+  // Extract the first year from the timespan
+  const yearA = parseInt(a.data.timespan.split('\n')[0]);
+  const yearB = parseInt(b.data.timespan.split('\n')[0]);
+  // Sort in descending order (newest first)
+  return yearB - yearA;
+});
+
+const featuredProjects = await import('../content/projects/featured-projects.json');
+const openSourceProjects = await import('../content/projects/open-source.json');
+const featuredArticles = await import('../content/articles/featured-articles.json');
+const educationCertifications = await import('../content/articles/education-certifications.json');
+const technicalSkills = await import('../content/articles/technical-skills.json');
+const contact = await import('../content/articles/contact.json');
+---
+
+<BaseLayout title="Daniele Dan - Software Engineer & AI Enthusiast">
+  <Hero />
+  
+  <hr />
+  
+  <Section>
+    <Timeline>
+      {sortedHistory.map(entry => (
+        <TimelineItem 
+          timespan={entry.data.timespan} 
+          icon={entry.data.icon} 
+          iconAlt={entry.data.iconAlt || ""}
+        >
+          <div>
+            <strong>{entry.data.title}</strong> at <a href="#">{entry.data.organization}</a>
+            <p class="mt-2">{entry.data.description}</p>
+            
+            {entry.data.links && (
+              <p class="mt-2">
+                I also create educational content on my <a href={entry.data.links[0].url}>{entry.data.links[0].text}</a>. Here are some popular videos:
+              </p>
+            )}
+            
+            {entry.data.items && (
+              <div class="mt-2">
+                <p>Technical series:</p>
+                <ol class="list-decimal pl-5 mt-1">
+                  {entry.data.items.map(item => (
+                    <li>{item}</li>
+                  ))}
+                </ol>
+              </div>
+            )}
+          </div>
+        </TimelineItem>
+      ))}
+    </Timeline>
+  </Section>
+  
+  <Section background="gray">
+    <SectionTitle title="Featured Projects" />
+    <p class="mb-6">Here are some of my featured projects:</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {featuredProjects.default.map(project => (
+        <div class="bg-white p-4 rounded shadow-sm">
+          <h3 class="font-semibold text-lg">{project.title}</h3>
+          <p class="text-gray-700 mt-2">{project.description}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-4 text-gray-600 italic">Project images will be added soon.</p>
+  </Section>
+  
+  <Section>
+    <SectionTitle title="Technical Skills" />
+    <p class="mb-4">{technicalSkills.default.intro}</p>
+    <div>
+      <p class="mb-2">My core technical skills include:</p>
+      <ul class="space-y-2">
+        {technicalSkills.default.categories.map(category => (
+          <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-primary">
+            <strong>{category.name}:</strong> {category.skills}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Section>
+  
+  <Section background="gray">
+    <SectionTitle title="Featured Articles" />
+    <p class="mb-4">I regularly write about software development, AI, and technology trends on my blog and other platforms:</p>
+    <ul class="space-y-2">
+      {featuredArticles.default.map(article => (
+        <li>
+          {article.date} <a href={article.url} class="hover:underline">{article.title}</a>
+        </li>
+      ))}
+    </ul>
+  </Section>
+  
+  <Section>
+    <SectionTitle title="Open Source Contributions" />
+    <ul class="space-y-6">
+      {openSourceProjects.default.map(project => (
+        <li>
+          <strong><a href={project.url} class="hover:underline">{project.title}</a></strong> - {project.description}
+        </li>
+      ))}
+    </ul>
+    <p class="mt-4 text-gray-600 italic">Project images will be added soon.</p>
+  </Section>
+  
+  <Section background="gray">
+    <SectionTitle title="Education & Certifications" />
+    <div class="space-y-6">
+      {educationCertifications.default.map(item => (
+        <div>
+          <div class="font-semibold"><a href={item.url}>{item.title}</a></div>
+          <div class="text-gray-600">{item.organization}</div>
+          {item.description && <div>{item.description}</div>}
+        </div>
+      ))}
+    </div>
+    <div class="mt-6">
+      Also see my <a href="#">LinkedIn profile</a> for more details
+    </div>
+  </Section>
+  
+  <Section>
+    <SectionTitle title={contact.default.title} />
+    <ul class="space-y-2 pl-2.5">
+      {contact.default.links.map(link => (
+        <li class="pl-2">
+          <a href={link.url}>{link.text}</a>
+        </li>
+      ))}
+      <li class="pl-2">{contact.default.footer}</li>
+    </ul>
+  </Section>
+  
+  <div class="h-32"></div>
+</BaseLayout>

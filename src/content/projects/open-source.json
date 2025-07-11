@@ -1,0 +1,22 @@
+[
+  {
+    "title": "data-visualizer",
+    "description": "A lightweight library for creating interactive data visualizations. It provides a simple API for transforming complex datasets into insightful charts and graphs with minimal configuration.",
+    "url": "#"
+  },
+  {
+    "title": "react-component-library",
+    "description": "A collection of reusable React components designed for modern web applications. It includes form elements, navigation components, modals, and more, all with accessibility and responsiveness in mind.",
+    "url": "#"
+  },
+  {
+    "title": "api-toolkit",
+    "description": "A comprehensive toolkit for building and testing RESTful APIs. It includes middleware for authentication, rate limiting, and request validation, as well as utilities for documentation generation and testing.",
+    "url": "#"
+  },
+  {
+    "title": "ml-playground",
+    "description": "An educational platform for experimenting with machine learning algorithms. It provides interactive visualizations and code examples to help users understand how different algorithms work and when to use them.",
+    "url": "#"
+  }
+]

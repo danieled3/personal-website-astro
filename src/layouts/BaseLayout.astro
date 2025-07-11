@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Daniele Dan - Software Engineer & AI Enthusiast" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="font-sans">
+    <main>
+      <slot />
+    </main>
+    <script>
+      // Email obfuscation script
+      const rot13 = (message) => {
+        const alpha = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM';
+        return message.replace(/[a-z]/gi, letter => alpha[alpha.indexOf(letter) + 13]);
+      }
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        const emailElement = document.getElementById('iemail');
+        if (emailElement) {
+          let e_is_shown = false;
+          emailElement.addEventListener("click", function(){
+            let demail = document.getElementById('demail');
+            let msg = "qnavry.qna" + "@" + "tznvy.pbz<oe>Srry serr gb ernpu bhg vs lbh unir nal dhrfgvbaf be jbhyq yvxr gb qvfphff cbgragvny pbyynobengvbaf."
+            if (demail) {
+              demail.innerHTML = rot13(msg);
+              demail.style.opacity = e_is_shown ? 0 : 1;
+              e_is_shown = !e_is_shown;
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

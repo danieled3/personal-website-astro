@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Master of Science in Computer Science",
+    "organization": "University of Technology, 2018",
+    "description": "Specialization in Artificial Intelligence and Machine Learning",
+    "url": "#"
+  },
+  {
+    "title": "Bachelor of Engineering in Computer Engineering",
+    "organization": "National University, 2014",
+    "description": "Minor in Data Science",
+    "url": "#"
+  },
+  {
+    "title": "AWS Certified Solutions Architect",
+    "organization": "Amazon Web Services, 2022",
+    "description": "Professional Level",
+    "url": "#"
+  },
+  {
+    "title": "Google Cloud Professional Data Engineer",
+    "organization": "Google Cloud, 2021",
+    "description": "",
+    "url": "#"
+  },
+  {
+    "title": "Microsoft Certified: Azure Developer Associate",
+    "organization": "Microsoft, 2020",
+    "description": "",
+    "url": "#"
+  }
+]

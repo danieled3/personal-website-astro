@@ -1,0 +1,26 @@
+[
+  {
+    "title": "AI-Powered Analytics Dashboard",
+    "description": "A dashboard that uses machine learning to provide insights from complex data sets."
+  },
+  {
+    "title": "Cloud-Native Microservices Architecture",
+    "description": "A scalable architecture for deploying microservices on cloud platforms."
+  },
+  {
+    "title": "Real-time Data Processing Pipeline",
+    "description": "A system for processing and analyzing data in real-time."
+  },
+  {
+    "title": "Mobile App for Health Monitoring",
+    "description": "An app that helps users track their health metrics and provides personalized recommendations."
+  },
+  {
+    "title": "E-commerce Platform with Recommendation Engine",
+    "description": "An online shopping platform with AI-powered product recommendations."
+  },
+  {
+    "title": "Blockchain-based Supply Chain Solution",
+    "description": "A solution for tracking products through the supply chain using blockchain technology."
+  }
+]

@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  url?: string;
+}
+
+const { title, url = "#" } = Astro.props;
+---
+
+<div class="mb-6">
+  <h3 class="font-semibold mb-1">
+    {url !== "#" ? (
+      <a href={url} class="hover:underline">{title}</a>
+    ) : (
+      title
+    )}
+  </h3>
+  <div class="text-gray-700">
+    <slot />
+  </div>
+</div>

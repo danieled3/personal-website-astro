@@ -1,0 +1,14 @@
+---
+interface Props {
+  background?: "white" | "gray";
+  paddingY?: string;
+}
+
+const { background = "white", paddingY = "py-8" } = Astro.props;
+---
+
+<section class={`w-full ${background === "gray" ? "bg-gray-100" : ""} ${paddingY}`}>
+  <div class="max-w-3xl mx-auto px-4">
+    <slot />
+  </div>
+</section>

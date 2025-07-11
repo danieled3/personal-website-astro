@@ -1,0 +1,19 @@
+{
+  "timespan": "2023",
+  "icon": "/personal-website-astro/assets/amazon_logo.png",
+  "iconAlt": "Current Company",
+  "title": "Senior Software Engineer",
+  "organization": "Tech Innovations",
+  "description": "I'm currently working as a Senior Software Engineer at Tech Innovations, focusing on developing AI-powered solutions for enterprise clients.",
+  "links": [
+    {
+      "text": "YouTube channel",
+      "url": "#"
+    }
+  ],
+  "items": [
+    "Building Scalable Web Applications - A comprehensive guide to modern web architecture.",
+    "Machine Learning Fundamentals - Introduction to key ML concepts and implementations.",
+    "Cloud-Native Development - Best practices for developing applications in the cloud."
+  ]
+}

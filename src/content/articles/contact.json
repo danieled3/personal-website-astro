@@ -1,0 +1,22 @@
+{
+  "title": "Contact & Connect",
+  "links": [
+    {
+      "text": "Follow me on GitHub for my latest projects and contributions",
+      "url": "https://github.com/danieled3"
+    },
+    {
+      "text": "Connect with me on LinkedIn for professional networking",
+      "url": "#"
+    },
+    {
+      "text": "Subscribe to my newsletter for monthly updates on my work and industry insights",
+      "url": "#"
+    },
+    {
+      "text": "Check out my speaking schedule for upcoming conferences and events",
+      "url": "#"
+    }
+  ],
+  "footer": "This website was built with Astro and Tailwind CSS, focusing on simplicity and performance"
+}

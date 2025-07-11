@@ -1,0 +1,21 @@
+{
+  "intro": "I specialize in full-stack development with expertise in both frontend and backend technologies.",
+  "categories": [
+    {
+      "name": "Frontend",
+      "skills": "React, Vue.js, Angular, HTML5, CSS3, JavaScript/TypeScript"
+    },
+    {
+      "name": "Backend",
+      "skills": "Node.js, Python, Java, Go, RESTful APIs, GraphQL"
+    },
+    {
+      "name": "Databases",
+      "skills": "MongoDB, PostgreSQL, MySQL, Redis"
+    },
+    {
+      "name": "DevOps",
+      "skills": "Docker, Kubernetes, AWS, Azure, CI/CD pipelines"
+    }
+  ]
+}
