@@ -3,20 +3,40 @@ interface Props {
   timespan: string;
   icon: string;
   iconAlt?: string;
+  hasExtendedContent?: boolean;
 }
 
-const { timespan, icon, iconAlt = "" } = Astro.props;
+const { timespan, icon, iconAlt = "", hasExtendedContent = false } = Astro.props;
+
+// Check if this is the Padua University logo to make it bigger
+const isPaduaLogo = icon.includes('padua_university_logo.png');
+
+// Determine if this is an education entry based on the icon or content
+const isEducation = icon.includes('university') || icon.includes('college') || icon.includes('padua');
+const borderColor = isEducation ? 'border-green-500' : 'border-blue-500';
 ---
 
-<article class="grid grid-cols-[5.5rem_2rem_1fr] gap-4 mb-10 relative">
-  <time class="text-sm font-medium text-gray-500 text-right pr-5 pt-1.5 whitespace-pre-line flex flex-col items-end">
-    {timespan}
-  </time>
-  <div class="relative">
-    <div class="timeline-dot"></div>
-    <img src={icon} alt={iconAlt} class="max-w-[80px] max-h-[80px] w-auto h-auto object-contain rounded" />
-  </div>
-  <div class="prose max-w-none">
-    <slot />
+<article class={`bg-white dark:bg-gray-800 rounded-lg shadow-sm border-l-4 ${borderColor} p-6 mb-6 hover:shadow-md dark:hover:shadow-lg transition-all duration-300 card-hover`}>
+  <div class="flex items-start gap-4">
+    <!-- Company/Institution Logo and Timespan -->
+    <div class="flex-shrink-0 flex flex-col items-center">
+      <img 
+        src={icon} 
+        alt={iconAlt} 
+        class={`w-auto h-auto object-contain rounded mb-2 ${isPaduaLogo ? 'max-w-[80px] max-h-[60px]' : 'max-w-[60px] max-h-[40px]'}`} 
+      />
+      <!-- Timespan under the image -->
+      <div class="text-xs font-medium text-gray-500 dark:text-gray-400 text-center whitespace-pre-line">
+        {timespan}
+      </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="flex-grow">
+      <!-- Main Content -->
+      <div class="prose dark:prose-invert max-w-none">
+        <slot />
+      </div>
+    </div>
   </div>
 </article>

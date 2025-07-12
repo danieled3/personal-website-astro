@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "title": "Trady, your trading assistant",
+      "description": "Building of Trady, a Telegram chatbot that automatically handles stock trading for you",
+      "image": "/projects/trady-featured.jpg",
+      "github": "https://github.com/danieled3/Autotrading",
+      "tags": ["Predictive Analytics", "TensorFlow", "Trading", "Telegram Bot", "Python"],
+      "featured": true,
+      "year": "2021"
+    },
+    {
+      "title": "Sentiment Analysis of Amazon Reviews",
+      "description": "Comparison of performances of 3 different NN models in predicting Amazon review scores with that of a human.",
+      "image": "/projects/sentiment-analysis-featured.jpg",
+      "github": "https://github.com/danieled3/Amazon_Reviews_Sentiment_Analysis",
+      "tags": ["NLP", "TensorFlow", "Deep Learning", "Sentiment Analysis", "Python"],
+      "featured": true,
+      "year": "2021"
+    },
+    {
+      "title": "Classification of Cassava Leaf Disease",
+      "description": "Analysis of the effectiveness of transfer learning in the classification of cassava leaf diseases",
+      "image": "/projects/cassava-featured.jpg",
+      "github": "https://github.com/danieled3/Cassava_Leaf_Desease_Classification",
+      "tags": ["Computer Vision", "TensorFlow", "Transfer Learning", "Agriculture", "Python"],
+      "featured": true,
+      "year": "2021"
+    },
+    {
+      "title": "E-commerce demand forecasting",
+      "description": "Prediction of the e-commerce orders of a supermarket chain through machine learning and signal analysis",
+      "image": "/projects/ecommerce-forecasting-featured.jpg",
+      "github": "https://github.com/danieled3/Ecommerce_Demand_Forecasting",
+      "tags": ["Predictive Analytics", "Time Series", "Machine Learning", "E-commerce", "Python"],
+      "featured": true,
+      "year": "2020"
+    },
+    {
+      "title": "The main trends in UK population",
+      "description": "Exploration of UK population progression by region and age group from 1981 to 2017",
+      "image": "/projects/uk-population-featured.jpg",
+      "github": "https://github.com/danieled3/UK_Population_Analysis",
+      "tags": ["Data Exploration", "Data Visualization", "Demographics", "Python", "Pandas"],
+      "featured": true,
+      "year": "2020"
+    }
+  ]
+}

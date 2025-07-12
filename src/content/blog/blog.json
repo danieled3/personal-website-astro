@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "title": "Tensorflow: Convolutional Neural Networks",
+      "date": "2021-03-01",
+      "description": "Prezi presentation of convolutional NN and some implementations in Keras/Tensorflow",
+      "image": "/blog/cnn-featured.jpg",
+      "tags": ["TensorFlow", "Deep Learning", "CNN", "Computer Vision"],
+      "type": "Tech Speech",
+      "link": "#",
+      "featured": true
+    },
+    {
+      "title": "Scikit-Learn",
+      "date": "2020-09-22",
+      "description": "Introduction to Scikit-Learn library, principal object types and practical examples",
+      "image": "/blog/sklearn-featured.jpg",
+      "tags": ["Scikit-Learn", "Machine Learning", "Python", "Data Science"],
+      "type": "Tech Speech",
+      "link": "#",
+      "featured": true
+    },
+    {
+      "title": "NLP with SpaCy",
+      "date": "2020-05-19",
+      "description": "Introduction to Spacy library for NLP and practical examples",
+      "image": "/blog/spacy-featured.jpg",
+      "tags": ["NLP", "SpaCy", "Natural Language Processing", "Python"],
+      "type": "Tech Speech",
+      "link": "#",
+      "featured": true
+    },
+    {
+      "title": "Blockchain",
+      "date": "2020-02-25",
+      "description": "Introduction to Blockchain and example of a ML integration",
+      "image": "/blog/blockchain-featured.jpg",
+      "tags": ["Blockchain", "Machine Learning", "Cryptocurrency", "Technology"],
+      "type": "Tech Speech",
+      "link": "#",
+      "featured": true
+    }
+  ]
+}

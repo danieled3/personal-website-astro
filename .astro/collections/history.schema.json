@@ -1,0 +1,65 @@
+{
+  "$ref": "#/definitions/history",
+  "definitions": {
+    "history": {
+      "type": "object",
+      "properties": {
+        "timespan": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "iconAlt": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "timespan",
+        "icon",
+        "title",
+        "organization",
+        "description"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

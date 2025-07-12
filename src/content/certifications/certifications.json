@@ -1,0 +1,63 @@
+{
+  "certifications": [
+    {
+      "title": "Databricks Certified Associate Developer for Apache Spark 2.4",
+      "issuer": "Databricks",
+      "date": "Jun 2021",
+      "description": "This certification exam assesses an understanding of the basics of the Spark architecture and the ability to apply the Spark DataFrame API to complete individual data manipulation tasks.",
+      "certificateUrl": "https://academy.databricks.com/award/certification/952bd85f-8605-31f9-8d31-7ca1cc64e80f/view-ext",
+      "logo": "/certifications/databricks-logo.png",
+      "tags": ["Apache Spark", "Big Data", "Data Engineering", "Databricks"]
+    },
+    {
+      "title": "Tensorflow Developer Certificate",
+      "issuer": "TensorFlow",
+      "date": "Mar 2021",
+      "expiryDate": "Mar 2024",
+      "description": "The certificate program requires an understanding of building TensorFlow models using Computer Vision, Convolutional Neural Networks, Natural Language Processing, and real-world image data and strategies.",
+      "certificateUrl": "https://www.credential.net/fae49c69-ac65-431f-9b08-4db8c533a0aa#gs.4xv8ro",
+      "logo": "/certifications/tensorflow-logo.png",
+      "tags": ["TensorFlow", "Deep Learning", "Machine Learning", "AI"]
+    },
+    {
+      "title": "AWS Certified Machine Learning – Specialty",
+      "issuer": "Amazon Web Services",
+      "date": "Jan 2021",
+      "expiryDate": "Jan 2024",
+      "description": "Earners of this certification have an in-depth understanding of AWS machine learning (ML) services. They demonstrated ability to build, train, tune, and deploy ML models using the AWS Cloud.",
+      "certificateUrl": "https://www.credly.com/badges/72244433-8cdb-407d-bae8-3eb608500d46?source=linked_in_profile",
+      "logo": "/certifications/aws-ml-logo.png",
+      "tags": ["AWS", "Machine Learning", "Cloud Computing", "MLOps"]
+    },
+    {
+      "title": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "Dec 2020",
+      "expiryDate": "Dec 2023",
+      "description": "Earners of this certification have a fundamental understanding of IT services and their uses in the AWS Cloud. They demonstrated cloud fluency and foundational AWS knowledge.",
+      "certificateUrl": "https://www.credly.com/badges/9742e957-1e02-4241-885a-166198362566?source=linked_in_profile",
+      "logo": "/certifications/aws-cloud-practitioner-logo.png",
+      "tags": ["AWS", "Cloud Computing", "Cloud Architecture", "IT Infrastructure"]
+    },
+    {
+      "title": "Tableau Desktop Certified Associate",
+      "issuer": "Tableau",
+      "date": "Sep 2020",
+      "expiryDate": "Sep 2022",
+      "description": "Earners of the Tableau Desktop Certified Associate title are proficient users of the features and functionality of Tableau Desktop to analyze data and solve problems.",
+      "certificateUrl": "https://www.credly.com/badges/0ef3c248-61af-4f3a-9474-5d5351848ce2?source=linked_in_profile",
+      "logo": "/certifications/tableau-associate-logo.png",
+      "tags": ["Tableau", "Data Visualization", "Business Intelligence", "Analytics"]
+    },
+    {
+      "title": "Tableau Desktop Specialist",
+      "issuer": "Tableau",
+      "date": "Aug 2020",
+      "expiryDate": "Aug 2022",
+      "description": "Earners of the Tableau Desktop Specialist title use their foundational knowledge of Tableau Desktop and data analytics to solve problems.",
+      "certificateUrl": "https://www.credly.com/badges/07cab277-d8e1-46c2-b49b-4c6fb66372b4?source=linked_in_profile",
+      "logo": "/certifications/tableau-specialist-logo.png",
+      "tags": ["Tableau", "Data Analysis", "Data Visualization", "Business Intelligence"]
+    }
+  ]
+}

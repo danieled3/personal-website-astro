@@ -1,0 +1,16 @@
+{
+  "description": "I maintain a curated list of books I've read, currently reading, and want to read. This includes technical books, business insights, and personal development resources that have shaped my professional journey.",
+  "notionUrl": "https://danieledan.notion.site/ff7639056ac74fe3953fa0c9f33b4423?v=87adf66a24d64b11b62972a572ec866b",
+  "categories": [
+    "Data Science & Machine Learning",
+    "Software Engineering",
+    "Business & Strategy",
+    "Personal Development",
+    "Technology Trends"
+  ],
+  "stats": {
+    "totalBooks": "50+",
+    "currentlyReading": "3",
+    "favorites": "12"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "publications": [
+    {
+      "title": "Local Dynamic Approximate Solution for Stationary Mean Field Games",
+      "authors": ["Daniele Dan", "Prof. Maria Elena Valcher (University of Padua)", "Prof. Alessandro Astolfi (Imperial College)"],
+      "type": "Master Thesis",
+      "year": "2016",
+      "institution": "University of Padua & Imperial College London",
+      "description": "Developed my master thesis project in cooperation with the Control and Power research group. The matter of my studies was Mean Field Games, stochastical systems where an infinite number of agents is involved. Proposed and demonstrated an innovative way to solve a particular class of Mean Field Games approximately.",
+      "pdf": "/thesis.pdf",
+      "slides": "https://docs.google.com/presentation/d/e/2PACX-1vQV4zCMcTVoRMbCLPyqG3isFD2j21RxNbtoQgEa6JBebxBmI1p6eK0Or1ozKJDzRZarx1YjedLASLiO/pub?start=false&loop=false&delayms=5000",
+      "tags": ["Mean Field Games", "Control Theory", "Mathematical Modeling", "Stochastic Systems"]
+    }
+  ]
+}
