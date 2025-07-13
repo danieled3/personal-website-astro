@@ -2,29 +2,29 @@
   "items": [
     {
       "title": "Certifications I took when I was a consultant",
-      "type": "inline-list",
+      "type": "bullet-list",
       "links": [
-        { "title": "AWS Certified Solutions Architect", "url": "#" },
+        { "title": "AWS Certified Machine Learning – Specialty", "url": "#" },
+        { "title": "AWS Certified Cloud Practitioner", "url": "#" },
         { "title": "Google Cloud Professional Data Engineer", "url": "#" },
-        { "title": "Microsoft Azure Data Scientist Associate", "url": "#" },
-        { "title": "Databricks Certified Data Engineer", "url": "#" }
+        { "title": "Microsoft Azure Data Scientist Associate", "url": "#" }
       ]
     },
     {
-      "title": "I maintain a curated list of books I've read, currently reading, and want to read. This includes technical books, business insights, and personal development resources that have shaped my professional journey.",
-      "type": "link",
-      "url": "https://www.notion.so/danieledan/Reading-List-123456789",
-      "linkText": "View Reading List"
-    },
-    {
-      "title": "Tech Talks",
-      "type": "inline-list",
+      "title": "Some presentations of tech talk I had in PwC to present new tools internally",
+      "type": "bullet-list",
       "links": [
         { "title": "Tensorflow: Convolutional Neural Networks", "url": "#" },
         { "title": "Scikit-Learn", "url": "#" },
         { "title": "NLP with SpaCy", "url": "#" },
         { "title": "Blockchain and ML", "url": "#" }
       ]
+    },
+    {
+      "title": "I maintain a curated list of books I've read, currently reading, and want to read. This includes technical books, business insights, and personal development resources that have shaped my professional journey.",
+      "type": "link",
+      "url": "https://www.notion.so/danieledan/Reading-List-123456789",
+      "linkText": "Link"
     }
   ]
 }

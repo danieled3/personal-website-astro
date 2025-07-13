@@ -1,11 +1,20 @@
 {
   "publications": [
     {
-      "title": "Local Dynamic Approximate Solution for Stationary Mean Field Games",
-      "authors": ["Daniele Dan", "Prof. Maria Elena Valcher", "Prof. Alessandro Astolfi"],
+      "title": "Application of Machine Learning algorithms to industrial machines and robots",
+      "authors": ["Daniele Dan", "Maria Elena Valcher", "Alessandro Astolfi"],
       "year": "2016",
+      "conference": "Master Thesis",
       "pdf": "/thesis.pdf",
-      "slides": "https://docs.google.com/presentation/d/e/2PACX-1vQV4zCMcTVoRMbCLPyqG3isFD2j21RxNbtoQgEa6JBebxBmI1p6eK0Or1ozKJDzRZarx1YjedLASLiO/pub?start=false&loop=false&delayms=5000"
+      "slides": "https://docs.google.com/presentation/d/e/2PACX-1vQV4zCMcTVoRMbCLPyqG3isFD2j21RxNbtoQgEa6JBebxBmI1p6eK0Or1ozKJDzRZarx1YjedLASLiO/pub?start=false&loop=false&delayms=5000#slide=id.gcabc71af0_0_0"
+    },
+    {
+      "title": "Deep Learning Approaches for Time Series Forecasting in Industrial Applications",
+      "authors": ["Daniele Dan", "Marco Rossi", "Giulia Bianchi"],
+      "year": "2023",
+      "conference": "IEEE International Conference on Machine Learning",
+      "pdf": "#",
+      "slides": "#"
     }
   ]
 }

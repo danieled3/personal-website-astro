@@ -6,7 +6,7 @@
       "description": "Building of Trady, a Telegram chatbot that automatically handles stock trading for you",
       "tags": ["Python", "Trading", "Telegram Bot", "AI"],
       "github": "https://github.com/danieled3/Autotrading",
-      "image": "/assets/profile.JPG"
+      "image": "/trady.jpg"
     },
     {
       "title": "Sentiment Analysis of Amazon Reviews",
@@ -14,7 +14,7 @@
       "description": "Comparison of performances of 3 different NN models in predicting Amazon review scores with that of a human.",
       "tags": ["NLP", "Deep Learning", "TensorFlow", "Sentiment Analysis"],
       "github": "https://github.com/danieled3/Amazon_Reviews_Sentiment_Analysis",
-      "image": "/assets/profile.JPG"
+      "image": "/amazon_sentiment.jpg"
     },
     {
       "title": "Classification of Cassava Leaf Disease",
@@ -22,7 +22,7 @@
       "description": "Analysis of the effectiveness of transfer learning in the classification of cassava leaf diseases",
       "tags": ["Computer Vision", "Transfer Learning", "Agriculture", "CNN"],
       "github": "https://github.com/danieled3/Cassava_Leaf_Desease_Classification",
-      "image": "/assets/profile.JPG"
+      "image": "/cassava_classification.jpg"
     },
     {
       "title": "E-commerce demand forecasting",
@@ -30,7 +30,7 @@
       "description": "Prediction of the e-commerce orders of a supermarket chain through machine learning and signal analysis",
       "tags": ["Time Series", "Forecasting", "Machine Learning", "E-commerce"],
       "github": "https://github.com/danieled3/Ecommerce_Demand_Forecasting",
-      "image": "/assets/profile.JPG"
+      "image": "/ecommerce.jpg"
     },
     {
       "title": "The main trends in UK population",
@@ -38,7 +38,7 @@
       "description": "Exploration of UK population progression by region and age group from 1981 to 2017",
       "tags": ["Data Analysis", "Visualization", "Demographics", "Python"],
       "github": "https://github.com/danieled3/UK_Population_Analysis",
-      "image": "/assets/profile.JPG"
+      "image": "/uk_population.jpg"
     }
   ]
 }

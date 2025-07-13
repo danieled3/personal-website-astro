@@ -32,31 +32,38 @@ const misc = await import('../content/misc/misc.json');
     <!-- Job Experience Section -->
     <section id="job" class="section-spacing bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div class="container-custom">
-        <h2 class="section-title text-gray-900 dark:text-white">Professional Experience</h2>
+        <h2 class="section-title">Professional Experience</h2>
         <Timeline>
           {sortedHistory.map(entry => (
             <TimelineItem 
-              timespan={entry.data.timespan} 
+              timespan="" 
               icon={entry.data.icon} 
               iconAlt={entry.data.iconAlt || ""}
               hasExtendedContent={!!entry.data.items}
             >
               <div>
-                <strong class="text-gray-900 dark:text-white text-sm">{entry.data.title}</strong> at <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">{entry.data.organization}</a>
-                <p class="mt-1 text-gray-700 dark:text-gray-300 text-xs leading-tight">{entry.data.description}</p>
+                <div class="flex items-start justify-between mb-1">
+                  <div class="flex-1">
+                    <strong class="text-gray-900 dark:text-white text-base">{entry.data.title}</strong> at <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline text-base">{entry.data.organization}</a>
+                  </div>
+                  <span class="text-sm text-gray-500 dark:text-gray-500 ml-4 flex-shrink-0">
+                    {entry.data.timespan.replace('\n', ' - ')}
+                  </span>
+                </div>
+                <p class="mt-1 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{entry.data.description}</p>
                 
                 {entry.data.links && (
-                  <p class="mt-1 text-gray-700 dark:text-gray-300 text-xs">
+                  <p class="mt-1 text-gray-700 dark:text-gray-300 text-sm">
                     I also create educational content on my <a href={entry.data.links[0].url} class="text-blue-600 dark:text-blue-400 hover:underline">{entry.data.links[0].text}</a>.
                     {entry.data.items && " Here are some popular videos:"}
                   </p>
                 )}
                 
                 {entry.data.items && (
-                  <div class="mt-1">
-                    <ol class="list-decimal pl-4 text-gray-700 dark:text-gray-300 text-xs">
+                  <div class="mt-2">
+                    <ol class="list-decimal pl-4 text-gray-700 dark:text-gray-300 text-sm">
                       {entry.data.items.map(item => (
-                        <li class="leading-tight">{item}</li>
+                        <li class="leading-relaxed">{item}</li>
                       ))}
                     </ol>
                   </div>
@@ -71,24 +78,22 @@ const misc = await import('../content/misc/misc.json');
     <!-- Publications Section -->
     <section id="publications" class="section-spacing bg-white dark:bg-gray-900 transition-colors duration-300">
       <div class="container-custom">
-        <h2 class="section-title text-gray-900 dark:text-white">Publications</h2>
-        <div class="space-y-1">
+        <h2 class="section-title">Publications</h2>
+        <div class="space-y-3">
           {publications.default.publications.map(pub => (
-            <div class="leading-tight">
-              <div class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">
-                <a href={pub.pdf}>{pub.title}</a>
-              </div>
-              <div class="text-xs text-gray-900 dark:text-white">
-                Master Thesis {pub.year} 
+            <div class="leading-relaxed">
+              <div>
+                <a href={pub.pdf} class="text-blue-600 dark:text-blue-400 hover:underline text-base font-medium">{pub.title}</a> 
+                <span class="pub-conference"> {pub.conference} {pub.year}</span>
                 {pub.pdf && <a href={pub.pdf} class="text-blue-600 dark:text-blue-400 hover:underline ml-2">[PDF]</a>}
                 {pub.slides && <a href={pub.slides} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline ml-1">[Slides]</a>}
               </div>
-              <div class="text-xs text-gray-600 dark:text-gray-400">
+              <div class="pub-authors mt-1">
                 {pub.authors.join(', ')}
               </div>
             </div>
           ))}
-          <div class="text-xs text-gray-600 dark:text-gray-400 mt-2">
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-4">
             Also on <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">Google Scholar</a>
           </div>
         </div>
@@ -98,18 +103,18 @@ const misc = await import('../content/misc/misc.json');
     <!-- Agent Video Section -->
     <section id="agent-video" class="section-spacing bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div class="container-custom">
-        <h2 class="section-title text-gray-900 dark:text-white">Agent Video</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+        <h2 class="section-title">Agent Video</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
           {agentVideo.default.videos.map(video => (
-            <div class="bg-white dark:bg-gray-900 rounded p-2 card-hover">
+            <div class="video-card">
               <a href={video.url} target="_blank" rel="noopener" class="block">
-                <div class="aspect-video bg-gray-200 dark:bg-gray-700 rounded mb-1 flex items-center justify-center">
-                  <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                <div class="video-thumbnail">
+                  <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
-                <h3 class="text-xs font-medium text-gray-900 dark:text-white mb-1 leading-tight">{video.title}</h3>
-                <div class="flex justify-between text-xs text-gray-500 dark:text-gray-500">
+                <h3 class="video-title">{video.title}</h3>
+                <div class="video-meta">
                   <span>{video.duration}</span>
                   <span>{video.views}</span>
                 </div>
@@ -123,15 +128,15 @@ const misc = await import('../content/misc/misc.json');
     <!-- Blog Section -->
     <section id="blog" class="section-spacing bg-white dark:bg-gray-900 transition-colors duration-300">
       <div class="container-custom">
-        <h2 class="section-title text-gray-900 dark:text-white">Blog</h2>
-        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">{blog.default.description}</p>
-        <div class="space-y-0">
+        <h2 class="section-title">Blog</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">{blog.default.description}</p>
+        <div class="space-y-1">
           {blog.default.posts.map(post => (
-            <div class="flex justify-between items-center">
-              <a href={post.url} class="text-xs hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <div class="blog-item">
+              <a href={post.url} class="blog-title">
                 {post.title}
               </a>
-              <span class="text-xs text-gray-500 dark:text-gray-500 ml-4">
+              <span class="blog-date">
                 {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
               </span>
             </div>
@@ -143,24 +148,27 @@ const misc = await import('../content/misc/misc.json');
     <!-- Pet Projects Section -->
     <section id="projects" class="section-spacing bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div class="container-custom">
-        <h2 class="section-title text-gray-900 dark:text-white">Pet Projects</h2>
-        <div class="space-y-2">
+        <h2 class="section-title">Pet Projects</h2>
+        <div class="space-y-3">
           {petProjects.default.projects.map(project => (
-            <div class="bg-white dark:bg-gray-900 rounded p-3 card-hover">
-              <div class="flex items-start gap-3">
-                <img src={project.image} alt={project.title} class="w-12 h-8 object-cover rounded flex-shrink-0" />
+            <div class="project-card">
+              <div class="flex items-start gap-4">
+                <img src={project.image} alt={project.title} class="w-24 h-20 object-cover rounded flex-shrink-0" />
                 <div class="flex-1 min-w-0">
-                  <h3 class="text-sm font-medium text-gray-900 dark:text-white mb-1 leading-tight">{project.title}</h3>
-                  <p class="text-xs text-gray-700 dark:text-gray-300 mb-1 leading-tight">{project.description}</p>
-                  <div class="flex flex-wrap gap-1 mb-1">
+                  <div class="flex items-start justify-between mb-1">
+                    <h3 class="project-title">{project.title}</h3>
+                    <span class="project-year ml-4 flex-shrink-0">{project.year}</span>
+                  </div>
+                  <p class="project-description">{project.description}</p>
+                  <div class="project-tags">
                     {project.tags.map(tag => (
-                      <span class="px-1 py-0 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded text-xs">
+                      <span class="project-tag">
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-                <a href={project.github} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline text-xs flex-shrink-0">
+                <a href={project.github} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline text-sm flex-shrink-0">
                   GitHub
                 </a>
               </div>
@@ -173,32 +181,38 @@ const misc = await import('../content/misc/misc.json');
     <!-- Miscellaneous Section -->
     <section id="misc" class="section-spacing bg-white dark:bg-gray-900 transition-colors duration-300">
       <div class="container-custom">
-        <h2 class="section-title text-gray-900 dark:text-white">Miscellaneous</h2>
+        <h2 class="section-title">Miscellaneous</h2>
         <div class="space-y-3">
           {misc.default.items.map(item => (
             <div>
-              {item.type === 'inline-list' && (
-                <div>
-                  <div class="text-xs text-gray-900 dark:text-white mb-1">{item.title}</div>
-                  <div class="text-xs text-gray-700 dark:text-gray-300">
-                    {item.links.map((link, index) => (
-                      <span>
-                        <a href={link.url} class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                          {link.title}
-                        </a>
-                        {index < item.links.length - 1 && <span class="text-gray-400 mx-1">•</span>}
-                      </span>
-                    ))}
+              {item.type === 'bullet-list' && (
+                <div class="misc-bullet-item">
+                  <span class="misc-bullet">•</span>
+                  <div class="misc-content">
+                    <span class="misc-title">{item.title}: </span>
+                    <span class="misc-links">
+                      {item.links.map((link, index) => (
+                        <span>
+                          <a href={link.url} class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline">
+                            {link.title}
+                          </a>
+                          {index < item.links.length - 1 && <span class="text-gray-400 mx-1">, </span>}
+                        </span>
+                      ))}
+                    </span>
                   </div>
                 </div>
               )}
               
               {item.type === 'link' && (
-                <div>
-                  <div class="text-xs text-gray-700 dark:text-gray-300 mb-1">{item.title}</div>
-                  <a href={item.url} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline text-xs">
-                    → {item.linkText}
-                  </a>
+                <div class="misc-bullet-item">
+                  <span class="misc-bullet">•</span>
+                  <div class="misc-content">
+                    <span class="misc-title">{item.title} </span>
+                    <a href={item.url} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline text-base">
+                      [{item.linkText}]
+                    </a>
+                  </div>
                 </div>
               )}
             </div>
@@ -208,9 +222,9 @@ const misc = await import('../content/misc/misc.json');
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-gray-900 border-t dark:border-gray-700 py-3 transition-colors duration-300">
+    <footer class="bg-white dark:bg-gray-900 border-t dark:border-gray-700 py-4 transition-colors duration-300">
       <div class="container-custom text-center">
-        <p class="text-xs text-gray-600 dark:text-gray-400">
+        <p class="text-sm text-gray-600 dark:text-gray-400">
           © 2024 Daniele Dan. Built with <a href="https://astro.build" class="text-blue-600 dark:text-blue-400 hover:underline">Astro</a> and <a href="https://tailwindcss.com" class="text-blue-600 dark:text-blue-400 hover:underline">Tailwind CSS</a>.
         </p>
       </div>

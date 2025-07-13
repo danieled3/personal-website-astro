@@ -1,7 +1,7 @@
 {
   "timespan": "2023",
-  "icon": "/personal-website-astro/assets/amazon_logo.png",
-  "iconAlt": "Current Company",
+  "icon": "/assets/amazon_logo.png",
+  "iconAlt": "Amazon",
   "title": "Senior Software Engineer",
   "organization": "Tech Innovations",
   "description": "I'm currently working as a Senior Software Engineer at Tech Innovations, focusing on developing AI-powered solutions for enterprise clients.",

@@ -1,8 +1,8 @@
 {
-  "timespan": "2014\n2018",
-  "icon": "/personal-website-astro/assets/imperial_college_logo.png",
-  "iconAlt": "University",
-  "title": "Master's degree in Computer Science",
-  "organization": "University of Technology",
-  "description": "I completed my Master's degree in Computer Science at University of Technology, specializing in Artificial Intelligence and Machine Learning."
+  "timespan": "2014\n2016",
+  "icon": "/assets/padua_university_logo.png",
+  "iconAlt": "University of Padua",
+  "title": "Master's in Computer Science",
+  "organization": "University of Padua",
+  "description": "Completed my Master's degree focusing on machine learning and artificial intelligence."
 }

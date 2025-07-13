@@ -2,18 +2,18 @@
 ---
 
 <nav class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-sm z-50 transition-colors duration-300">
-  <div class="max-w-6xl mx-auto px-2">
-    <div class="flex justify-between items-center h-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="flex justify-between items-center h-8">
       <!-- Logo/Name -->
       <div class="flex-shrink-0">
-        <a href="#about" class="text-base font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+        <a href="#about" class="text-sm font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
           Daniele Dan
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:block">
-        <div class="ml-6 flex items-baseline space-x-4">
+        <div class="ml-6 flex items-baseline space-x-3">
           <a href="#job" class="nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-1 py-0 text-xs font-medium transition-colors">
             Job
           </a>
@@ -48,7 +48,7 @@
       <!-- Mobile menu button -->
       <div class="md:hidden">
         <button id="mobile-menu-button" class="p-1 rounded text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-          <svg class="h-4 w-4" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+          <svg class="h-3 w-3" stroke="currentColor" fill="none" viewBox="0 0 24 24">
             <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -150,7 +150,7 @@
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        const offsetTop = target.offsetTop - 50; // Account for fixed nav height
+        const offsetTop = target.offsetTop - 40; // Account for fixed nav height
         window.scrollTo({
           top: offsetTop,
           behavior: 'smooth'
@@ -166,7 +166,7 @@
     
     let current = '';
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 60;
+      const sectionTop = section.offsetTop - 50;
       const sectionHeight = section.clientHeight;
       if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
         current = section.getAttribute('id');
