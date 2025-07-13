@@ -1,0 +1,22 @@
+{
+  "videos": [
+    {
+      "title": "Building Autonomous AI Agents with LangChain",
+      "description": "A comprehensive guide to creating intelligent agents that can reason and act autonomously.",
+      "thumbnail": "/assets/video-placeholder-1.jpg",
+      "url": "https://youtube.com/watch?v=placeholder1",
+      "duration": "45:30",
+      "views": "12.5K",
+      "date": "2024-03-15"
+    },
+    {
+      "title": "Multi-Agent Systems: Coordination and Communication",
+      "description": "Exploring how multiple AI agents can work together to solve complex problems.",
+      "thumbnail": "/assets/video-placeholder-2.jpg", 
+      "url": "https://youtube.com/watch?v=placeholder2",
+      "duration": "38:22",
+      "views": "8.9K",
+      "date": "2024-02-28"
+    }
+  ]
+}

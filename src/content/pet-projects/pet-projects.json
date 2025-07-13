@@ -2,48 +2,43 @@
   "projects": [
     {
       "title": "Trady, your trading assistant",
+      "year": "2024",
       "description": "Building of Trady, a Telegram chatbot that automatically handles stock trading for you",
-      "image": "/projects/trady-featured.jpg",
+      "tags": ["Python", "Trading", "Telegram Bot", "AI"],
       "github": "https://github.com/danieled3/Autotrading",
-      "tags": ["Predictive Analytics", "TensorFlow", "Trading", "Telegram Bot", "Python"],
-      "featured": true,
-      "year": "2021"
+      "image": "/assets/profile.JPG"
     },
     {
       "title": "Sentiment Analysis of Amazon Reviews",
+      "year": "2023",
       "description": "Comparison of performances of 3 different NN models in predicting Amazon review scores with that of a human.",
-      "image": "/projects/sentiment-analysis-featured.jpg",
+      "tags": ["NLP", "Deep Learning", "TensorFlow", "Sentiment Analysis"],
       "github": "https://github.com/danieled3/Amazon_Reviews_Sentiment_Analysis",
-      "tags": ["NLP", "TensorFlow", "Deep Learning", "Sentiment Analysis", "Python"],
-      "featured": true,
-      "year": "2021"
+      "image": "/assets/profile.JPG"
     },
     {
       "title": "Classification of Cassava Leaf Disease",
+      "year": "2023",
       "description": "Analysis of the effectiveness of transfer learning in the classification of cassava leaf diseases",
-      "image": "/projects/cassava-featured.jpg",
+      "tags": ["Computer Vision", "Transfer Learning", "Agriculture", "CNN"],
       "github": "https://github.com/danieled3/Cassava_Leaf_Desease_Classification",
-      "tags": ["Computer Vision", "TensorFlow", "Transfer Learning", "Agriculture", "Python"],
-      "featured": true,
-      "year": "2021"
+      "image": "/assets/profile.JPG"
     },
     {
       "title": "E-commerce demand forecasting",
+      "year": "2022",
       "description": "Prediction of the e-commerce orders of a supermarket chain through machine learning and signal analysis",
-      "image": "/projects/ecommerce-forecasting-featured.jpg",
+      "tags": ["Time Series", "Forecasting", "Machine Learning", "E-commerce"],
       "github": "https://github.com/danieled3/Ecommerce_Demand_Forecasting",
-      "tags": ["Predictive Analytics", "Time Series", "Machine Learning", "E-commerce", "Python"],
-      "featured": true,
-      "year": "2020"
+      "image": "/assets/profile.JPG"
     },
     {
       "title": "The main trends in UK population",
+      "year": "2021",
       "description": "Exploration of UK population progression by region and age group from 1981 to 2017",
-      "image": "/projects/uk-population-featured.jpg",
+      "tags": ["Data Analysis", "Visualization", "Demographics", "Python"],
       "github": "https://github.com/danieled3/UK_Population_Analysis",
-      "tags": ["Data Exploration", "Data Visualization", "Demographics", "Python", "Pandas"],
-      "featured": true,
-      "year": "2020"
+      "image": "/assets/profile.JPG"
     }
   ]
 }

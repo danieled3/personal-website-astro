@@ -1,43 +1,30 @@
 {
-  "interests": [
-    "Predictive Analytics",
-    "Deep Learning (NLP, Computer vision)",
-    "Explainable AI",
-    "Cloud Architecture",
-    "Data Engineering",
-    "MLOps"
-  ],
-  "education": [
+  "items": [
     {
-      "degree": "MSc Automation Engineering",
-      "institution": "University of Padua, Italy",
-      "year": "2016",
-      "description": "Specialized in control systems, robotics, and machine learning applications to industrial automation."
+      "title": "Certifications I took when I was a consultant",
+      "type": "inline-list",
+      "links": [
+        { "title": "AWS Certified Solutions Architect", "url": "#" },
+        { "title": "Google Cloud Professional Data Engineer", "url": "#" },
+        { "title": "Microsoft Azure Data Scientist Associate", "url": "#" },
+        { "title": "Databricks Certified Data Engineer", "url": "#" }
+      ]
     },
     {
-      "degree": "Research traineeship",
-      "institution": "Imperial College of London, UK",
-      "year": "2016",
-      "description": "Conducted research in Mean Field Games and stochastic control systems."
+      "title": "I maintain a curated list of books I've read, currently reading, and want to read. This includes technical books, business insights, and personal development resources that have shaped my professional journey.",
+      "type": "link",
+      "url": "https://www.notion.so/danieledan/Reading-List-123456789",
+      "linkText": "View Reading List"
     },
     {
-      "degree": "BSc Computer Engineering",
-      "institution": "University of Padua, Italy",
-      "year": "2013",
-      "description": "Foundation in computer science, programming, algorithms, and system design."
+      "title": "Tech Talks",
+      "type": "inline-list",
+      "links": [
+        { "title": "Tensorflow: Convolutional Neural Networks", "url": "#" },
+        { "title": "Scikit-Learn", "url": "#" },
+        { "title": "NLP with SpaCy", "url": "#" },
+        { "title": "Blockchain and ML", "url": "#" }
+      ]
     }
-  ],
-  "personalInfo": {
-    "location": "Padua, Italy",
-    "languages": ["Italian (Native)", "English (Fluent)"],
-    "currentFocus": "Leading data science teams and implementing AI solutions for enterprise clients",
-    "philosophy": "Numbers have always been my passion. I'm a curious and determined constant learner who believes in the power of data to solve complex business problems."
-  },
-  "achievements": [
-    "Led a team of 5 data scientists/engineers",
-    "Delivered 50+ presentations to clients across 5 different industries",
-    "Reduced literature review time by 80% for a European agency using NLP",
-    "Improved income estimation accuracy by 21% for an international bank",
-    "Achieved 15% MAPE in demand forecasting for a multinational fashion company"
   ]
 }

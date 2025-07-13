@@ -4,5 +4,6 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://danieled3.github.io',
-  base: '/personal-website-astro',
+  // Temporarily remove base for local development
+  // base: '/personal-website-astro',
 });

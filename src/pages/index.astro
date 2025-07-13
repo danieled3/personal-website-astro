@@ -4,42 +4,35 @@ import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Timeline from '../components/Timeline.astro';
 import TimelineItem from '../components/TimelineItem.astro';
-import Section from '../components/Section.astro';
-import SectionTitle from '../components/SectionTitle.astro';
-import Card from '../components/Card.astro';
 
 // Import data
 import { getCollection } from 'astro:content';
 
 const historyEntries = await getCollection('history');
 const sortedHistory = historyEntries.sort((a, b) => {
-  // Extract the first year from the timespan
   const yearA = parseInt(a.data.timespan.split('\n')[0]);
   const yearB = parseInt(b.data.timespan.split('\n')[0]);
-  // Sort in descending order (newest first)
   return yearB - yearA;
 });
 
 // Import JSON content
 const publications = await import('../content/publications/publications.json');
+const agentVideo = await import('../content/agent-video/agent-video.json');
 const blog = await import('../content/blog/blog.json');
 const petProjects = await import('../content/pet-projects/pet-projects.json');
-const books = await import('../content/books/books.json');
-const certifications = await import('../content/certifications/certifications.json');
 const misc = await import('../content/misc/misc.json');
 ---
 
 <BaseLayout title="Daniele Dan - Senior Data Scientist & AI Enthusiast">
   <Navigation />
   
-  <!-- Add padding top to account for fixed navigation -->
-  <div class="pt-16">
+  <div class="pt-10">
     <Hero />
     
     <!-- Job Experience Section -->
     <section id="job" class="section-spacing bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div class="container-custom">
-        <SectionTitle title="Professional Experience" />
+        <h2 class="section-title text-gray-900 dark:text-white">Professional Experience</h2>
         <Timeline>
           {sortedHistory.map(entry => (
             <TimelineItem 
@@ -49,11 +42,11 @@ const misc = await import('../content/misc/misc.json');
               hasExtendedContent={!!entry.data.items}
             >
               <div>
-                <strong class="text-gray-900 dark:text-white">{entry.data.title}</strong> at <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">{entry.data.organization}</a>
-                <p class="mt-2 text-gray-700 dark:text-gray-300">{entry.data.description}</p>
+                <strong class="text-gray-900 dark:text-white text-sm">{entry.data.title}</strong> at <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">{entry.data.organization}</a>
+                <p class="mt-1 text-gray-700 dark:text-gray-300 text-xs leading-tight">{entry.data.description}</p>
                 
                 {entry.data.links && (
-                  <p class="mt-2 text-gray-700 dark:text-gray-300">
+                  <p class="mt-1 text-gray-700 dark:text-gray-300 text-xs">
                     I also create educational content on my <a href={entry.data.links[0].url} class="text-blue-600 dark:text-blue-400 hover:underline">{entry.data.links[0].text}</a>.
                     {entry.data.items && " Here are some popular videos:"}
                   </p>
@@ -61,9 +54,9 @@ const misc = await import('../content/misc/misc.json');
                 
                 {entry.data.items && (
                   <div class="mt-1">
-                    <ol class="list-decimal pl-5 text-gray-700 dark:text-gray-300">
+                    <ol class="list-decimal pl-4 text-gray-700 dark:text-gray-300 text-xs">
                       {entry.data.items.map(item => (
-                        <li>{item}</li>
+                        <li class="leading-tight">{item}</li>
                       ))}
                     </ol>
                   </div>
@@ -78,30 +71,49 @@ const misc = await import('../content/misc/misc.json');
     <!-- Publications Section -->
     <section id="publications" class="section-spacing bg-white dark:bg-gray-900 transition-colors duration-300">
       <div class="container-custom">
-        <SectionTitle title="Publications & Research" />
-        <div class="space-y-6">
+        <h2 class="section-title text-gray-900 dark:text-white">Publications</h2>
+        <div class="space-y-1">
           {publications.default.publications.map(pub => (
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 card-hover">
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{pub.title}</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-2">
-                {pub.authors.join(', ')} • {pub.year} • {pub.institution}
-              </p>
-              <p class="text-gray-700 dark:text-gray-300 mb-4">{pub.description}</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                {pub.tags.map(tag => (
-                  <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">
-                    {tag}
-                  </span>
-                ))}
+            <div class="leading-tight">
+              <div class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">
+                <a href={pub.pdf}>{pub.title}</a>
               </div>
-              <div class="flex gap-4">
-                {pub.pdf && (
-                  <a href={pub.pdf} class="text-blue-600 dark:text-blue-400 hover:underline">PDF</a>
-                )}
-                {pub.slides && (
-                  <a href={pub.slides} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Slides</a>
-                )}
+              <div class="text-xs text-gray-900 dark:text-white">
+                Master Thesis {pub.year} 
+                {pub.pdf && <a href={pub.pdf} class="text-blue-600 dark:text-blue-400 hover:underline ml-2">[PDF]</a>}
+                {pub.slides && <a href={pub.slides} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline ml-1">[Slides]</a>}
               </div>
+              <div class="text-xs text-gray-600 dark:text-gray-400">
+                {pub.authors.join(', ')}
+              </div>
+            </div>
+          ))}
+          <div class="text-xs text-gray-600 dark:text-gray-400 mt-2">
+            Also on <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">Google Scholar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agent Video Section -->
+    <section id="agent-video" class="section-spacing bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+      <div class="container-custom">
+        <h2 class="section-title text-gray-900 dark:text-white">Agent Video</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+          {agentVideo.default.videos.map(video => (
+            <div class="bg-white dark:bg-gray-900 rounded p-2 card-hover">
+              <a href={video.url} target="_blank" rel="noopener" class="block">
+                <div class="aspect-video bg-gray-200 dark:bg-gray-700 rounded mb-1 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <h3 class="text-xs font-medium text-gray-900 dark:text-white mb-1 leading-tight">{video.title}</h3>
+                <div class="flex justify-between text-xs text-gray-500 dark:text-gray-500">
+                  <span>{video.duration}</span>
+                  <span>{video.views}</span>
+                </div>
+              </a>
             </div>
           ))}
         </div>
@@ -109,23 +121,19 @@ const misc = await import('../content/misc/misc.json');
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="section-spacing bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <section id="blog" class="section-spacing bg-white dark:bg-gray-900 transition-colors duration-300">
       <div class="container-custom">
-        <SectionTitle title="Blog & Tech Speeches" />
-        <p class="text-gray-600 dark:text-gray-400 mb-8 text-center">Introduction to technical topics with presentations and code examples</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <h2 class="section-title text-gray-900 dark:text-white">Blog</h2>
+        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">{blog.default.description}</p>
+        <div class="space-y-0">
           {blog.default.posts.map(post => (
-            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-sm p-6 card-hover">
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{post.title}</h3>
-              <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-              <p class="text-gray-700 dark:text-gray-300 mb-4">{post.description}</p>
-              <div class="flex flex-wrap gap-2">
-                {post.tags.map(tag => (
-                  <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+            <div class="flex justify-between items-center">
+              <a href={post.url} class="text-xs hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                {post.title}
+              </a>
+              <span class="text-xs text-gray-500 dark:text-gray-500 ml-4">
+                {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+              </span>
             </div>
           ))}
         </div>
@@ -133,170 +141,76 @@ const misc = await import('../content/misc/misc.json');
     </section>
 
     <!-- Pet Projects Section -->
-    <section id="projects" class="section-spacing bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section id="projects" class="section-spacing bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div class="container-custom">
-        <SectionTitle title="Pet Projects" />
-        <p class="text-gray-600 dark:text-gray-400 mb-8 text-center">Some of the projects I have worked on in my spare time</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 class="section-title text-gray-900 dark:text-white">Pet Projects</h2>
+        <div class="space-y-2">
           {petProjects.default.projects.map(project => (
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 card-hover">
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-              <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">{project.year}</p>
-              <p class="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                {project.tags.map(tag => (
-                  <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">
-                    {tag}
-                  </span>
-                ))}
+            <div class="bg-white dark:bg-gray-900 rounded p-3 card-hover">
+              <div class="flex items-start gap-3">
+                <img src={project.image} alt={project.title} class="w-12 h-8 object-cover rounded flex-shrink-0" />
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-sm font-medium text-gray-900 dark:text-white mb-1 leading-tight">{project.title}</h3>
+                  <p class="text-xs text-gray-700 dark:text-gray-300 mb-1 leading-tight">{project.description}</p>
+                  <div class="flex flex-wrap gap-1 mb-1">
+                    {project.tags.map(tag => (
+                      <span class="px-1 py-0 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded text-xs">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <a href={project.github} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline text-xs flex-shrink-0">
+                  GitHub
+                </a>
               </div>
-              <a href={project.github} target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                View on GitHub
-              </a>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- Books Section -->
-    <section id="books" class="section-spacing bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <!-- Miscellaneous Section -->
+    <section id="misc" class="section-spacing bg-white dark:bg-gray-900 transition-colors duration-300">
       <div class="container-custom">
-        <SectionTitle title="Books & Reading List" />
-        <div class="max-w-4xl mx-auto">
-          <div class="bg-white dark:bg-gray-900 rounded-lg p-8 card-hover text-center">
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">{books.default.description}</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div class="text-center">
-                <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">{books.default.stats.totalBooks}</div>
-                <div class="text-gray-600 dark:text-gray-400">Total Books</div>
-              </div>
-              <div class="text-center">
-                <div class="text-3xl font-bold text-green-600 dark:text-green-400">{books.default.stats.currentlyReading}</div>
-                <div class="text-gray-600 dark:text-gray-400">Currently Reading</div>
-              </div>
-              <div class="text-center">
-                <div class="text-3xl font-bold text-purple-600 dark:text-purple-400">{books.default.stats.favorites}</div>
-                <div class="text-gray-600 dark:text-gray-400">Favorites</div>
-              </div>
-            </div>
-
-            <div class="mb-8">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Categories</h3>
-              <div class="flex flex-wrap justify-center gap-2">
-                {books.default.categories.map(category => (
-                  <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">
-                    {category}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <a href={books.default.notionUrl} target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/>
-              </svg>
-              View My Reading List on Notion
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="section-spacing bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div class="container-custom">
-        <SectionTitle title="Certifications" />
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {certifications.default.certifications.map(cert => (
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 card-hover">
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{cert.title}</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-2">
-                {cert.issuer} • {cert.date}
-                {cert.expiryDate && ` - ${cert.expiryDate}`}
-              </p>
-              <p class="text-gray-700 dark:text-gray-300 mb-4">{cert.description}</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                {cert.tags.map(tag => (
-                  <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <a href={cert.certificateUrl} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">
-                View Certificate
-              </a>
+        <h2 class="section-title text-gray-900 dark:text-white">Miscellaneous</h2>
+        <div class="space-y-3">
+          {misc.default.items.map(item => (
+            <div>
+              {item.type === 'inline-list' && (
+                <div>
+                  <div class="text-xs text-gray-900 dark:text-white mb-1">{item.title}</div>
+                  <div class="text-xs text-gray-700 dark:text-gray-300">
+                    {item.links.map((link, index) => (
+                      <span>
+                        <a href={link.url} class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                          {link.title}
+                        </a>
+                        {index < item.links.length - 1 && <span class="text-gray-400 mx-1">•</span>}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {item.type === 'link' && (
+                <div>
+                  <div class="text-xs text-gray-700 dark:text-gray-300 mb-1">{item.title}</div>
+                  <a href={item.url} target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline text-xs">
+                    → {item.linkText}
+                  </a>
+                </div>
+              )}
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Misc Section -->
-    <section id="misc" class="section-spacing bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-      <div class="container-custom">
-        <SectionTitle title="About Me" />
-        <div class="max-w-4xl mx-auto space-y-8">
-          <!-- Personal Philosophy -->
-          <div class="bg-white dark:bg-gray-900 rounded-lg p-6 card-hover">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Philosophy</h3>
-            <p class="text-gray-700 dark:text-gray-300">{misc.default.personalInfo.philosophy}</p>
-          </div>
-
-          <!-- Interests -->
-          <div class="bg-white dark:bg-gray-900 rounded-lg p-6 card-hover">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Interests</h3>
-            <div class="flex flex-wrap gap-2">
-              {misc.default.interests.map(interest => (
-                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">
-                  {interest}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <!-- Key Achievements -->
-          <div class="bg-white dark:bg-gray-900 rounded-lg p-6 card-hover">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Key Achievements</h3>
-            <ul class="space-y-2">
-              {misc.default.achievements.map(achievement => (
-                <li class="flex items-start">
-                  <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="text-gray-700 dark:text-gray-300">{achievement}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <!-- Personal Info -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white dark:bg-gray-900 rounded-lg p-6 card-hover">
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Location</h3>
-              <p class="text-gray-700 dark:text-gray-300">{misc.default.personalInfo.location}</p>
-            </div>
-            <div class="bg-white dark:bg-gray-900 rounded-lg p-6 card-hover">
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Languages</h3>
-              <ul class="space-y-1">
-                {misc.default.personalInfo.languages.map(language => (
-                  <li class="text-gray-700 dark:text-gray-300">{language}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-gray-900 border-t dark:border-gray-700 py-8 transition-colors duration-300">
+    <footer class="bg-white dark:bg-gray-900 border-t dark:border-gray-700 py-3 transition-colors duration-300">
       <div class="container-custom text-center">
-        <p class="text-gray-600 dark:text-gray-400">
+        <p class="text-xs text-gray-600 dark:text-gray-400">
           © 2024 Daniele Dan. Built with <a href="https://astro.build" class="text-blue-600 dark:text-blue-400 hover:underline">Astro</a> and <a href="https://tailwindcss.com" class="text-blue-600 dark:text-blue-400 hover:underline">Tailwind CSS</a>.
         </p>
       </div>

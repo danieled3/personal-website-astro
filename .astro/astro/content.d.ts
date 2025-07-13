@@ -144,7 +144,14 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"articles": {
+		"agent-video": {
+"agent-video": {
+	id: "agent-video";
+  collection: "agent-video";
+  data: any
+};
+};
+"articles": {
 "contact": {
 	id: "contact";
   collection: "articles";
